@@ -4,7 +4,8 @@ import time
 import threading
 import os
 
-app = Flask(__name__)
+# Use current folder as template directory
+app = Flask(__name__, template_folder=".")
 
 all_packets = []
 captured_packets = []
@@ -115,7 +116,7 @@ def compute_statistics(packets):
     }
 
 
-# ✅ FIXED ROUTE
+# Home page (index.html in same folder)
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -179,4 +180,4 @@ def get_status():
 if __name__ == "__main__":
     load_dataset("dataset.csv")
     print("[INFO] Starting Flask server at http://127.0.0.1:4500")
-    app.run(port=4500,debug=True, use_reloader=False)
+    app.run(port=4500, debug=True, use_reloader=False) 
