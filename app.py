@@ -4,7 +4,6 @@ import time
 import threading
 import os
 
-# Use current folder as template directory
 app = Flask(__name__, template_folder=".")
 
 all_packets = []
@@ -116,7 +115,6 @@ def compute_statistics(packets):
     }
 
 
-# Home page (index.html in same folder)
 @app.route("/")
 def index():
     return render_template("index.html")
