@@ -11,10 +11,7 @@ network_monitor/
 ├── app.py                  ← Main Flask server (backend logic)
 ├── dataset.py     ← Script to create the CSV dataset
 ├── dataset.csv             ← 400 simulated network packets
-├── requirements.txt        ← Python libraries needed
-│
-└── templates/
-    └── index.html          ← The web interface (frontend)
+├──index.html          ← The web interface (frontend)
 ```
 
 ---
@@ -27,11 +24,11 @@ Open a terminal in this folder and run:
 pip install flask
 ```
 
-### Step 2 — Generate the Dataset (already done, but you can re-run)
+### Step 2 — Generate the Dataset 
 ```bash
-python generate_dataset.py
+python dataset.py
 ```
-This creates `dataset.csv` with 200 simulated packets.
+This creates `dataset.csv` with 400 simulated packets.
 
 ### Step 3 — Start the Server
 ```bash
